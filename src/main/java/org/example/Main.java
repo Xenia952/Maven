@@ -18,6 +18,12 @@ public class Main {
         multiplyingNumbersInAnArray();
         fillInASquareArray();
         createAnArray(4, 12);
+
+        var productsArray = Product.InitializeProducts();
+
+        for (Product product : productsArray) {
+            product.printInfo();
+        }
     }
 
     public static void printThreeWords() {
@@ -142,7 +148,11 @@ public class Main {
         }
         System.out.println(Arrays.toString(a));
     }
+
 }
+
+
+
 
 
 
