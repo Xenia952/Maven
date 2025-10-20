@@ -66,12 +66,7 @@ public class Main {
 
     public static boolean amountLimits(int a, int b){
        int sum = a + b;
-        if (sum >= 10 && sum <= 20) {
-            return true;
-        } else {
-            return false;
-        }
-
+        return (sum >= 10 && sum <= 20);
     }
 
     public static void checkingTheNumbers(int a){
@@ -84,11 +79,7 @@ public class Main {
 
     }
     public static boolean checkingPositiveAndNegativeNumbers(int a){
-        if (a < 0) {
-            return true;
-        } else {
-            return false;
-        }
+        return (a < 0);
     }
     public static void printALine (String a, int b){
 
@@ -99,18 +90,7 @@ public class Main {
     }
 
     public static boolean leapYear(int year) {
-        if (year % 400 == 0) {
-            return true;
-        }
-        else {
-            if (year % 4 == 0 && year % 100 != 0) {
-                return true;
-            }
-            else {
-                return false;
-            }
-        }
-
+        return (year % 400 == 0) || (year % 4 == 0 && year % 100 != 0);
     }
 
     public static void replaceTheNumbers(){
@@ -149,14 +129,8 @@ public class Main {
     public static void fillInASquareArray(){
         int [][] a = new int [4][4];
         for (int i = 0; i < a.length; i++) {
-            for (int j = 0; j < a[i].length; j++) {
-                if (i == j) {
-                    a[i][j] = 1;
-                }
-                else {
-                    a[i][j] = 0;
-                }
-            }
+            a[i][i] = 1;
+            a[i][a.length - i - 1] = 1;
         }
         System.out.println(Arrays.deepToString(a));
     }
