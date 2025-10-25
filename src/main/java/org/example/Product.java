@@ -1,10 +1,10 @@
 package org.example;
 
 public class Product {
-    String name;
-    String date;
-    String manufacturer;
-    String country;
+    private String name;
+    private String date;
+    private String manufacturer;
+    private String country;
     int price;
     boolean booking;
 

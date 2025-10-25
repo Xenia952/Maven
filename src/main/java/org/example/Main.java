@@ -41,7 +41,6 @@ public class Main {
         else {
             System.out.println("Сумма отрицательная");
         }
-
     }
 
     public static void printColor(){
@@ -56,7 +55,6 @@ public class Main {
         else {
             System.out.println("Зеленый");
         }
-
     }
 
     public static void compareNumbers() {
@@ -82,7 +80,6 @@ public class Main {
         else {
             System.out.println("Число отрицательное");
         }
-
     }
     public static boolean checkingPositiveAndNegativeNumbers(int a){
         return (a < 0);
@@ -92,7 +89,6 @@ public class Main {
        for (int i = 0; i < b; i++) {
            System.out.println(a);
        }
-
     }
 
     public static boolean leapYear(int year) {
@@ -119,7 +115,6 @@ public class Main {
             a[i] = i+1;
         }
         System.out.println(Arrays.toString(a));
-
     }
 
     public static void multiplyingNumbersInAnArray(){
@@ -148,7 +143,6 @@ public class Main {
         }
         System.out.println(Arrays.toString(a));
     }
-
 }
 
 
