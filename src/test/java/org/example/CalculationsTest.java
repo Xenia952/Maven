@@ -37,7 +37,6 @@ public class CalculationsTest {
         assertEquals(-4, calculations.subtract(-7, -3));
         assertEquals(2, calculations.subtract(8, 6));
         assertEquals(13, calculations.subtract(8, -5));
-
     }
 
     @Test
@@ -64,33 +63,13 @@ public class CalculationsTest {
         });
     }
 
-
     @Test
-    public void testNumberIsLess() {
-        assertTrue(calculations.numberIsLess(2, 5));
-        assertTrue(calculations.numberIsLess(-1, 1));
-        assertTrue(calculations.numberIsLess(-74, -32));
-        assertFalse(calculations.numberIsLess(5, 1));
-        assertFalse(calculations.numberIsLess(0, -5));
-        assertFalse(calculations.numberIsLess(0.25, -1.35));
-    }
-
-    @Test
-    public void testNumberIsGreat() {
-        assertTrue(calculations.numberIsGreat(4, 1));
-        assertTrue(calculations.numberIsGreat(-5, -125));
-        assertTrue(calculations.numberIsGreat(0, -0.1));
-        assertFalse(calculations.numberIsGreat(-1.25, 0));
-        assertFalse(calculations.numberIsGreat(-5.23, -1));
-    }
-
-    @Test
-    public void testNumberIsLessOrEqual() {
-        assertTrue(calculations.numberIsEqual(5, 5));
-        assertTrue(calculations.numberIsEqual(-5, -5));
-        assertFalse(calculations.numberIsEqual(3, 1));
-        assertFalse(calculations.numberIsEqual(-3, 3));
-        assertFalse(calculations.numberIsEqual(0.254, -3));
+    public void testCompareNumbers() {
+        assertEquals("less", calculations.compareNumbers(3, 5));
+        assertEquals("greater", calculations.compareNumbers(5, 3));
+        assertEquals("equals", calculations.compareNumbers(7, 7));
+        assertEquals("less", calculations.compareNumbers(1.000001, 1.000002));
+        assertEquals("greater", calculations.compareNumbers(-1.25, -1.558));
     }
 }
 
