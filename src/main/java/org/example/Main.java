@@ -1,5 +1,10 @@
 package org.example;
 
+import org.example.lesson3.Product;
+import org.example.lesson4.*;
+import org.example.lesson5.MyArrayDataException;
+import org.example.lesson5.MyArraySizeException;
+
 import java.util.Arrays;
 
 public class Main {

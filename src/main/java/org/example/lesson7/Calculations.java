@@ -1,4 +1,4 @@
-package org.example;
+package org.example.lesson7;
 
 public class Calculations {
 
@@ -33,15 +33,13 @@ public class Calculations {
         return Math.round((a / b) * 100.0) / 100.0;
     }
 
-    public boolean numberIsLess(double a, double b) {
-        return a < b;
-    }
-
-    public boolean numberIsGreat(double a, double b) {
-        return a > b;
-    }
-
-    public boolean numberIsEqual(double a, double b) {
-        return a == b;
+    public String compareNumbers(double a, double b) {
+        if (a == b) {
+            return "equals";
+        } else if (a < b) {
+            return "less";
+        } else {
+            return "greater";
+        }
     }
 }

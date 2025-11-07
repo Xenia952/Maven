@@ -1,11 +1,8 @@
 package org.example;
 
+import org.example.lesson7.Calculations;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
-import static org.testng.Assert.assertTrue;
-import static org.testng.Assert.assertFalse;
-
 
 public class CalculationsTestNG {
     Calculations calculations = new Calculations();
@@ -65,32 +62,15 @@ public class CalculationsTestNG {
     }
 
     @Test
-    public void testNumberIsLess() {
-        assertTrue(calculations.numberIsLess(2, 5));
-        assertTrue(calculations.numberIsLess(-1, 1));
-        assertTrue(calculations.numberIsLess(-74, -32));
-        assertFalse(calculations.numberIsLess(5, 1));
-        assertFalse(calculations.numberIsLess(0, -5));
-        assertFalse(calculations.numberIsLess(0.25, -1.35));
-    }
-
-    @Test
-    public void testNumberIsGreat() {
-        assertTrue(calculations.numberIsGreat(4, 1));
-        assertTrue(calculations.numberIsGreat(-5, -125));
-        assertTrue(calculations.numberIsGreat(0, -0.1));
-        assertFalse(calculations.numberIsGreat(-1.25, 0));
-        assertFalse(calculations.numberIsGreat(-5.23, -1));
-    }
-
-    @Test
-    public void testNumberIsLessOrEqual() {
-        assertTrue(calculations.numberIsEqual(5, 5));
-        assertTrue(calculations.numberIsEqual(-5, -5));
-        assertFalse(calculations.numberIsEqual(3, 1));
-        assertFalse(calculations.numberIsEqual(-3, 3));
-        assertFalse(calculations.numberIsEqual(0.254, -3));
+    public void testCompareNumbers() {
+        Assert.assertEquals(calculations.compareNumbers(3, 5), "less");
+        Assert.assertEquals(calculations.compareNumbers(5, 3), "greater");
+        Assert.assertEquals(calculations.compareNumbers(7.0, 7.0), "equals");
+        Assert.assertEquals(calculations.compareNumbers(1.000001, 1.000002), "less");
     }
 }
+
+
+
 
 
