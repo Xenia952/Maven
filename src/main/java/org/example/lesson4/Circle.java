@@ -1,4 +1,4 @@
-package org.example;
+package org.example.lesson4;
 
 public class Circle implements Shapes {
     private double radius;

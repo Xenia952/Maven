@@ -1,5 +1,10 @@
 package org.example;
 
+import org.example.lesson3.Product;
+import org.example.lesson4.*;
+import org.example.lesson5.MyArrayDataException;
+import org.example.lesson5.MyArraySizeException;
+
 import java.util.Arrays;
 
 public class Main {
@@ -25,9 +30,9 @@ public class Main {
             cat.eat(bowl, 10);
         }
 
-        Shapes circle = new Circle(5," белый ", " синий ");
-        Shapes rectangle = new Rectangle (5.2, 3.9, " черный ", " красный ");
-        Shapes triangle = new Triangle (9.8, 5, 6, 7, " зеленый ", " желтый ");
+        Shapes circle = new Circle(5, " белый ", " синий ");
+        Shapes rectangle = new Rectangle(5.2, 3.9, " черный ", " красный ");
+        Shapes triangle = new Triangle(9.8, 5, 6, 7, " зеленый ", " желтый ");
         circle.printCharacteristics();
         rectangle.printCharacteristics();
         triangle.printCharacteristics();
@@ -36,6 +41,21 @@ public class Main {
         for (Product product : productsArray) {
             product.printInfo();
         }
+
+        String[][] myArray = {{"1", "2", "3", "4"}, {"1", "2", "3", "4",}, {"1", "2", "3", "F"}, {"1", "2", "3", "4"}};
+        try {
+            System.out.println("Сумма " + transformationAndAdditions(myArray));
+        } catch (MyArraySizeException e) {
+            System.out.println("--------");
+            System.out.println("неверный размер массива");
+            System.out.println("--------");
+        } catch (MyArrayDataException e) {
+            System.out.println("--------");
+            System.out.println(e.getMessage());
+            System.out.println("--------");
+        }
+
+        generateAndCatch(4, 4);
     }
 
     public static void printThreeWords() {
@@ -52,7 +72,6 @@ public class Main {
         } else {
             System.out.println("Сумма отрицательная");
         }
-
     }
 
     public static void printColor() {
@@ -154,10 +173,35 @@ public class Main {
         }
         System.out.println(Arrays.toString(a));
     }
+
+    public static int transformationAndAdditions(String[][] array) throws MyArraySizeException, MyArrayDataException {
+        int sum = 0;
+        if (array.length != 4) {
+            throw new MyArraySizeException();
+        }
+        for (int i = 0; i < array.length; i++) {
+            if (array[i].length != 4) {
+                throw new MyArraySizeException();
+            }
+            for (int j = 0; j < array[i].length; j++) {
+                try {
+                    int num = Integer.parseInt(array[i][j]);
+                    sum += num;
+                } catch (NumberFormatException e) {
+                    throw new MyArrayDataException("Ошибка в ячейке [" + i + "]" + "[" + j + "] " + e.getMessage());
+                }
+            }
+        }
+        return sum;
+    }
+
+    public static void generateAndCatch(int a, int b) {
+        int[] array = new int[a];
+        try {
+            array[b] = 123;
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }
-
-
-
-
-
 
