@@ -93,7 +93,6 @@ public class TestEcho {
                 .body("data.update", equalTo("true"))
                 .body("data.id", equalTo(1))
                 .body("headers.host", equalTo("postman-echo.com"));
-
     }
 
     @Test
@@ -106,6 +105,5 @@ public class TestEcho {
                 .body("url", equalTo("https://postman-echo.com/delete"))
                 .body("headers.host", equalTo("postman-echo.com"));
     }
-
 }
 
